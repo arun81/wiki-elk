@@ -16,7 +16,7 @@ sudo yum -y update
 sudo rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 
 cat << EOF > /etc/yum.repos.d/elasticsearch.repo
-[elasticsearch-5.x]
+[elasticsearch-6.x]
 name=Elasticsearch repository for 6.x packages
 baseurl=https://artifacts.elastic.co/packages/6.x/yum
 gpgcheck=1
@@ -27,7 +27,7 @@ type=rpm-md
 EOF
  
 cat << EOF > /etc/yum.repos.d/logstash.repo
-[logstash-5.x]
+[logstash-6.x]
 name=Elastic repository for 6.x packages
 baseurl=https://artifacts.elastic.co/packages/6.x/yum
 gpgcheck=1
@@ -38,7 +38,7 @@ type=rpm-md
 EOF
  
 cat << EOF > /etc/yum.repos.d/kibana.repo
-[kibana-5.x]
+[kibana-6.x]
 name=Kibana repository for 6.x packages
 baseurl=https://artifacts.elastic.co/packages/6.x/yum
 gpgcheck=1
@@ -92,9 +92,9 @@ sudo yum install -y nginx httpd-tools
 ```
 cat <<EOF > /etc/nginx/conf.d/proxy.conf
 proxy_redirect off;
-proxy_set_header Host $host;
-proxy_set_header X-Real-IP $remote_addr;
-proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header Host \$host;
+proxy_set_header X-Real-IP \$remote_addr;
+proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
 client_max_body_size 10m;
 client_body_buffer_size 128k;
 proxy_connect_timeout 90;
