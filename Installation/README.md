@@ -1,4 +1,4 @@
-# Installing ELK stack on Centos 7
+# Installing Elastic 6.x stack (ELK) on Centos 7
 
 ## Prepare OS
 ```
@@ -17,8 +17,8 @@ sudo rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 
 cat << EOF > /etc/yum.repos.d/elasticsearch.repo
 [elasticsearch-5.x]
-name=Elasticsearch repository for 5.x packages
-baseurl=https://artifacts.elastic.co/packages/5.x/yum
+name=Elasticsearch repository for 6.x packages
+baseurl=https://artifacts.elastic.co/packages/6.x/yum
 gpgcheck=1
 gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
 enabled=1
@@ -28,8 +28,8 @@ EOF
  
 cat << EOF > /etc/yum.repos.d/logstash.repo
 [logstash-5.x]
-name=Elastic repository for 5.x packages
-baseurl=https://artifacts.elastic.co/packages/5.x/yum
+name=Elastic repository for 6.x packages
+baseurl=https://artifacts.elastic.co/packages/6.x/yum
 gpgcheck=1
 gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
 enabled=1
@@ -39,8 +39,8 @@ EOF
  
 cat << EOF > /etc/yum.repos.d/kibana.repo
 [kibana-5.x]
-name=Kibana repository for 5.x packages
-baseurl=https://artifacts.elastic.co/packages/5.x/yum
+name=Kibana repository for 6.x packages
+baseurl=https://artifacts.elastic.co/packages/6.x/yum
 gpgcheck=1
 gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
 enabled=1
