@@ -1,4 +1,5 @@
 # Installing Elastic 6.x stack (ELK) on Centos 7
+NOTE: You need at least 2 CPUSs and 2G RAM
 
 ## Prepare OS
 ```
