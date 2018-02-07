@@ -85,6 +85,13 @@ sudo sed -i 's|#network.host: 192.168.0.1|network.host: 0.0.0.0|g' /etc/elastics
 sudo sed -i 's|#server.host: "localhost"|server.host: "0.0.0.0"|g' /etc/kibana/kibana.yml
 ```
 
+## Restart services for ELK stack 
+``` 
+sudo systemctl restart elasticsearch.service
+sudo systemctl restart logstash.service
+sudo systemctl restart kibana.service
+``` 
+
 # Nginx Reverse Proxy with basic authentication
 ```
 sudo yum install -y nginx httpd-tools
