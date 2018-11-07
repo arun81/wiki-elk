@@ -152,3 +152,15 @@ sudo firewall-cmd --add-port=5044/tcp --permanent
 sudo firewall-cmd --add-port=5601/tcp --permanent
 sudo firewall-cmd --reload
 ```
+
+# Housekeeping ELK
+
+If the disk space fills up (or gets higher than max value) Kibana might throw this at you
+FORBIDDEN/12/index read-only / allow delete (api)
+Elasticsearch is switching to read-only if it cannot index more documents because your hard drive is full. 
+With this it ensures availability for read-only queries. Elasticsearch will not switch back automatically
+To fix this run the following on your ELK stack
+```
+curl -XPUT -H "Content-Type: application/json" http://localhost:9200/_all/_settings -d '{"index.blocks.read_only_allow_delete": null}'
+```
+
