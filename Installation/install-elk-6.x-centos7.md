@@ -155,6 +155,11 @@ sudo firewall-cmd --reload
 
 # Housekeeping ELK
 
+## Metricbeat
+Manually insert indexes for Metricbeat into EL
+metricbeat setup --template -E output.logstash.enabled=false -E 'output.elasticsearch.hosts=["localhost:9200"]'
+
+## Hard drive FULL - 
 If the disk space fills up (or gets higher than max value) Kibana might throw this at you
 FORBIDDEN/12/index read-only / allow delete (api)
 Elasticsearch is switching to read-only if it cannot index more documents because your hard drive is full. 
